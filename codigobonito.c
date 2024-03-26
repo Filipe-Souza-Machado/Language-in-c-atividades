@@ -4,7 +4,7 @@
 int main(){
 	setlocale(LC_ALL,"");
 	
-	float notas[3][3], soma = 0,soma2 = 0,soma3 = 0, mediaP[3];
+	float notas[3][3], soma = 0, mediaP[3];
 	
 	char disciplinas[3][200];
 	
@@ -13,20 +13,23 @@ int main(){
 	float media;
 	
 	for(i = 0; i < 3; i++){
-		
+
 		printf("Digite a %iª Disciplina: ",i +1);
 		
 		scanf("%s",&disciplinas[i]);
 		
-		for(j = 0; j < 3; j++){
-			
+			for(j = 0; j < 3; j++){
+			do{
 			printf("Digite a %iª Nota ", j + 1);
-			
 			scanf("%f",&notas[i][j]);
 			
 			soma = (3 * notas[i][0]) + (3 * notas[i][1]) + (4 * notas[i][2]);
+			}while(notas[i][j] < 0 || notas[i][j] > 10);
+			
 
 		}
+		
+	
 		
 		mediaP[i] = soma / 10;
 		
